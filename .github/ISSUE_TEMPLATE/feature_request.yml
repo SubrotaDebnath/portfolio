@@ -1,0 +1,15 @@
+name: 🚀 Feature Request
+description: Suggest a new feature
+title: "[Feature]: "
+labels: [enhancement]
+body:
+  - type: input
+    id: summary
+    attributes:
+      label: Feature Summary
+      placeholder: "Add dark mode support"
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+      placeholder: "Why do you need this feature?"
