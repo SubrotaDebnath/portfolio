@@ -1,13 +1,32 @@
----
-name: 🚀 Feature Request
-about: Suggest a new feature
-title: "[Feature]: "
-labels: enhancement
+# 🐞 Bug Report
+
+**Description**
+Report a bug to help us improve.
+
 ---
 
-## ✨ Feature Summary
-<!-- Example: Add dark mode support -->
-  <!-- Describe your feature in a short sentence -->
+### 📝 Bug Summary
+<!-- Short description of the bug (required) -->
 
-  ## 💡 Motivation
-  <!-- Why do you need this feature? What problem does it solve? -->
+
+### 🔄 Steps to Reproduce
+<!-- Describe step-by-step how to reproduce the bug (required) -->
+1. Go to…
+2. Click…
+3. See error
+
+---
+
+### ✅ Expected Behavior
+<!-- What did you expect to happen? (required) -->
+
+
+### ❌ Actual Behavior
+<!-- What actually happened? (required) -->
+
+---
+
+### 🚨 Severity
+- [ ] Low
+- [ ] Medium
+- [ ] High
