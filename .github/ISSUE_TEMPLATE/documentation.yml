@@ -1,0 +1,252 @@
+name: 📚 Documentation Issue
+description: Report issues with documentation or suggest improvements
+title: "[Docs]: "
+labels: ["documentation", "needs-triage"]
+assignees:
+  - docs-maintainer-username
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve our documentation! Please provide as much detail as possible to help us understand and address the issue.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-submission checklist
+      description: Please ensure you've completed these steps before submitting
+      options:
+        - label: I have searched existing issues to make sure this hasn't been reported
+          required: true
+        - label: I have checked multiple sections of the documentation for this information
+          required: true
+        - label: I have considered whether this might be better suited as a discussion or question
+          required: true
+
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: Issue Type
+      description: What type of documentation issue is this?
+      options:
+        - Missing documentation
+        - Incorrect/outdated information
+        - Unclear or confusing content
+        - Broken links or references
+        - Formatting or display issues
+        - Translation issues
+        - Accessibility issues
+        - Documentation structure/organization
+        - Code examples not working
+        - Other (please specify)
+    validations:
+      required: true
+
+  - type: input
+    id: affected-page
+    attributes:
+      label: Affected Documentation Page(s)
+      description: Provide the URL or path to the documentation page(s)
+      placeholder: "https://docs.example.com/api/authentication or /docs/getting-started"
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-content
+    attributes:
+      label: Current Content (if applicable)
+      description: Quote the existing text that needs to be changed or is problematic
+      placeholder: |
+        Current documentation says:
+        > "To install the package, run `npm install package-name`"
+
+        But this is incorrect because...
+    validations:
+      required: false
+
+  - type: textarea
+    id: issue-description
+    attributes:
+      label: Issue Description
+      description: Describe the documentation problem in detail
+      placeholder: |
+        Clearly describe:
+        - What's wrong or missing
+        - Why it's problematic
+        - Who it affects (new users, experienced developers, etc.)
+        - What confusion or errors it causes
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggested-improvement
+    attributes:
+      label: Suggested Improvement
+      description: How should this be fixed or improved?
+      placeholder: |
+        Proposed solution:
+        - Add section explaining...
+        - Update the example to show...
+        - Clarify that users should...
+        - Add warning about...
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-content
+    attributes:
+      label: Proposed Content (if applicable)
+      description: If you have specific text or examples to suggest, include them here
+      placeholder: |
+        Suggested new content:
+
+        ```markdown
+        ## New Section Title
+
+        Explanation of the concept...
+
+        ### Example
+        ```javascript
+        // Working code example
+        ```
+
+        **Note:** Important caveat or warning
+        ```
+    validations:
+      required: false
+
+  - type: dropdown
+    id: user-impact
+    attributes:
+      label: User Impact
+      description: Who is most affected by this documentation issue?
+      options:
+        - New users/beginners
+        - Intermediate users
+        - Advanced users/developers
+        - API consumers
+        - Contributors/maintainers
+        - All users
+        - Specific user group (please specify)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How important is fixing this documentation issue?
+      options:
+        - Critical - Prevents users from completing essential tasks
+        - High - Causes significant confusion or errors
+        - Medium - Improves clarity and user experience
+        - Low - Minor improvement or nice-to-have
+    validations:
+      required: true
+
+  - type: textarea
+    id: user-story
+    attributes:
+      label: User Story/Context
+      description: Describe the user journey or scenario where this issue occurs
+      placeholder: |
+        As a [type of user], when I try to [accomplish task], I encounter this issue because [explanation].
+
+        For example:
+        "As a new developer, when I try to set up authentication following the quick start guide,
+        I get confused because the example shows outdated syntax that doesn't work with the current version."
+    validations:
+      required: false
+
+  - type: textarea
+    id: related-content
+    attributes:
+      label: Related Documentation
+      description: Are there other pages or sections that should be updated consistently?
+      placeholder: |
+        This change might also affect:
+        - /docs/api-reference/auth
+        - README.md examples
+        - Tutorial section 3
+        - FAQ entry about authentication
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: content-type
+    attributes:
+      label: Content Type Needed
+      description: What type of documentation improvement is needed?
+      options:
+        - label: Written explanation or guide
+        - label: Code examples or snippets
+        - label: Diagrams or visual aids
+        - label: Video or interactive content
+        - label: API reference updates
+        - label: Troubleshooting section
+        - label: FAQ entry
+        - label: Migration guide
+
+  - type: input
+    id: target-audience
+    attributes:
+      label: Target Audience
+      description: Who is the primary audience for this documentation?
+      placeholder: "Frontend developers, system administrators, mobile app developers, etc."
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-resources
+    attributes:
+      label: Additional Resources
+      description: Any external resources, references, or examples that might help?
+      placeholder: |
+        Helpful resources:
+        - Link to Stack Overflow discussion
+        - Reference implementation
+        - Similar documentation from other projects
+        - Relevant blog posts or tutorials
+    validations:
+      required: false
+
+  - type: textarea
+    id: technical-details
+    attributes:
+      label: Technical Context
+      description: Any technical details that are relevant for the documentation
+      placeholder: |
+        Technical considerations:
+        - This applies to version 2.x and above
+        - Only relevant for Node.js environments
+        - Requires specific dependencies
+        - Platform-specific behavior
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution
+      description: How would you like to help with this documentation improvement?
+      options:
+        - label: I can write the improved content
+        - label: I can provide detailed feedback on draft changes
+        - label: I can help with code examples and testing
+        - label: I can help with proofreading and editing
+        - label: I can create diagrams or visual content
+        - label: I can translate content to other languages
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other information that would help improve the documentation
+      placeholder: |
+        Additional context:
+        - This issue was discovered while...
+        - Related GitHub issues or discussions
+        - Community feedback or common questions
+        - Impact on adoption or user satisfaction
+    validations:
+      required: false

@@ -1,0 +1,308 @@
+name: ✅ Task/Todo
+description: Track a specific task, todo item, or work item that needs to be completed
+title: "[Task]: "
+labels: ["task", "todo"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template to track specific tasks, work items, or todos that need to be completed as part of project development.
+
+  - type: dropdown
+    id: task-type
+    attributes:
+      label: Task Type
+      description: What category does this task fall into?
+      options:
+        - Development task
+        - Testing task
+        - Documentation task
+        - Research/investigation
+        - Configuration/setup
+        - Deployment task
+        - Maintenance task
+        - Review task
+        - Planning/design task
+        - Quality assurance
+        - DevOps/infrastructure
+        - Security task
+        - Performance task
+        - Other (please specify)
+    validations:
+      required: true
+
+  - type: textarea
+    id: task-description
+    attributes:
+      label: Task Description
+      description: Clearly describe what needs to be done
+      placeholder: |
+        Describe the task in detail:
+        - What specifically needs to be accomplished
+        - Any context or background information
+        - Why this task is important
+        - Expected outcome or deliverable
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: Define what "done" means for this task
+      placeholder: |
+        This task will be considered complete when:
+        - [ ] Specific requirement 1 is met
+        - [ ] Specific requirement 2 is met
+        - [ ] Tests are passing
+        - [ ] Documentation is updated
+        - [ ] Code review is completed
+        - [ ] Deployed to staging/production
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How urgent/important is this task?
+      options:
+        - Critical - Must be done immediately
+        - High - Should be completed soon
+        - Medium - Normal priority
+        - Low - Can be done when time permits
+    validations:
+      required: true
+
+  - type: dropdown
+    id: complexity
+    attributes:
+      label: Estimated Complexity
+      description: How complex is this task?
+      options:
+        - XS - Very simple (< 2 hours)
+        - S - Simple (2-4 hours)
+        - M - Medium (0.5-1 day)
+        - L - Large (1-3 days)
+        - XL - Extra Large (3-5 days)
+        - XXL - Needs to be broken down further
+    validations:
+      required: true
+
+  - type: input
+    id: estimated-time
+    attributes:
+      label: Estimated Time
+      description: More specific time estimate if available
+      placeholder: "2 hours, 1 day, 1 week, etc."
+    validations:
+      required: false
+
+  - type: textarea
+    id: subtasks
+    attributes:
+      label: Subtasks/Checklist
+      description: Break down the task into smaller actionable items
+      placeholder: |
+        - [ ] Research existing implementations
+        - [ ] Design the solution approach
+        - [ ] Implement core functionality
+        - [ ] Write unit tests
+        - [ ] Write integration tests
+        - [ ] Update documentation
+        - [ ] Code review
+        - [ ] Manual testing
+        - [ ] Deploy to staging
+        - [ ] Deploy to production
+    validations:
+      required: false
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: What needs to be completed before this task can start?
+      placeholder: |
+        This task depends on:
+        - Issue #123 (API endpoint implementation)
+        - Database migration completion
+        - Design approval from team
+        - External service setup
+        - No dependencies
+    validations:
+      required: false
+
+  - type: textarea
+    id: related-work
+    attributes:
+      label: Related Issues/PRs
+      description: Link to related issues, pull requests, or discussions
+      placeholder: |
+        Related items:
+        - Relates to #456 (parent epic)
+        - Blocks #789 (dependent task)
+        - Part of milestone: v2.1.0
+        - Related PR: #321
+        - Discussion: #654
+    validations:
+      required: false
+
+  - type: textarea
+    id: affected-components
+    attributes:
+      label: Affected Components/Areas
+      description: What parts of the system will this task touch?
+      placeholder: |
+        Components that will be modified:
+        - Frontend: User dashboard component
+        - Backend: User service API
+        - Database: User table schema
+        - Documentation: API docs
+        - Tests: Integration test suite
+    validations:
+      required: false
+
+  - type: dropdown
+    id: skill-requirements
+    attributes:
+      label: Skill Requirements
+      description: What skills or expertise are needed for this task?
+      options:
+        - Frontend development
+        - Backend development
+        - Full-stack development
+        - Database/SQL expertise
+        - DevOps/infrastructure
+        - UI/UX design
+        - Technical writing
+        - Testing/QA
+        - Security expertise
+        - Performance optimization
+        - Domain expertise required
+        - Any team member can handle
+    validations:
+      required: false
+
+  - type: textarea
+    id: technical-notes
+    attributes:
+      label: Technical Notes/Requirements
+      description: Any technical considerations, constraints, or requirements
+      placeholder: |
+        Technical considerations:
+        - Must maintain backward compatibility
+        - Performance requirements: < 200ms response time
+        - Security considerations: Input validation required
+        - Browser support: IE11+ required
+        - API version constraints
+        - Memory/resource limitations
+    validations:
+      required: false
+
+  - type: textarea
+    id: testing-requirements
+    attributes:
+      label: Testing Requirements
+      description: What type of testing is needed for this task?
+      placeholder: |
+        Testing needed:
+        - Unit tests for new functions
+        - Integration tests for API endpoints
+        - E2E tests for user workflows
+        - Performance testing under load
+        - Security testing for vulnerabilities
+        - Browser compatibility testing
+        - Manual testing scenarios
+    validations:
+      required: false
+
+  - type: textarea
+    id: resources
+    attributes:
+      label: Resources/References
+      description: Helpful resources, documentation, or references for this task
+      placeholder: |
+        Useful resources:
+        - Design mockups: [link]
+        - API documentation: [link]
+        - Similar implementation: [link]
+        - Technical specification: [link]
+        - External library docs: [link]
+        - Team discussion notes: [link]
+    validations:
+      required: false
+
+  - type: dropdown
+    id: milestone
+    attributes:
+      label: Target Milestone/Release
+      description: Which milestone or release should this task be completed for?
+      options:
+        - Current sprint
+        - Next sprint
+        - v1.1.0
+        - v1.2.0
+        - v2.0.0
+        - Backlog
+        - No specific milestone
+    validations:
+      required: false
+
+  - type: textarea
+    id: definition-of-done
+    attributes:
+      label: Definition of Done
+      description: Team-specific criteria that must be met for task completion
+      placeholder: |
+        General DoD criteria:
+        - [ ] Code follows project style guide
+        - [ ] All tests are passing
+        - [ ] Code coverage maintains required threshold
+        - [ ] Security review completed (if applicable)
+        - [ ] Performance impact assessed
+        - [ ] Documentation updated
+        - [ ] Stakeholder approval obtained
+        - [ ] Deployed and verified in target environment
+    validations:
+      required: false
+
+  - type: textarea
+    id: risk-considerations
+    attributes:
+      label: Risks and Mitigation
+      description: Potential risks and how to mitigate them
+      placeholder: |
+        Identified risks:
+        - Risk: Breaking existing functionality
+          Mitigation: Comprehensive testing, feature flags
+        - Risk: Performance degradation
+          Mitigation: Performance benchmarking, monitoring
+        - Risk: Security vulnerabilities
+          Mitigation: Security review, input validation
+    validations:
+      required: false
+
+  - type: input
+    id: assignee-preference
+    attributes:
+      label: Preferred Assignee
+      description: Who should ideally work on this task? (optional)
+      placeholder: "@username or team-name"
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-notes
+    attributes:
+      label: Additional Notes
+      description: Any other relevant information about this task
+      placeholder: |
+        Additional context:
+        - Customer request driving this task
+        - Technical debt being addressed
+        - Learning opportunity for team member
+        - Experimental/proof-of-concept work
+        - Time-sensitive due to external deadline
+    validations:
+      required: false

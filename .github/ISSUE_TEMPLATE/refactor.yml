@@ -1,0 +1,312 @@
+name: 🔧 Refactor/Code Improvement
+description: Propose code refactoring, architecture improvements, or technical debt reduction
+title: "[Refactor]: "
+labels: ["refactor", "technical-debt", "needs-triage"]
+assignees:
+  - tech-lead-username
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve our codebase! Refactoring proposals help us maintain code quality and reduce technical debt.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-submission checklist
+      description: Please ensure you've completed these steps before submitting
+      options:
+        - label: I have searched existing issues to ensure this refactoring hasn't been proposed
+          required: true
+        - label: I have considered the impact on existing functionality
+          required: true
+        - label: I have identified specific benefits this refactoring would provide
+          required: true
+        - label: I have considered alternative approaches
+          required: true
+
+  - type: dropdown
+    id: refactor-type
+    attributes:
+      label: Refactoring Type
+      description: What type of refactoring or improvement is this?
+      options:
+        - Code structure/organization
+        - Performance optimization
+        - Design pattern implementation
+        - Dependency reduction/cleanup
+        - API design improvement
+        - Database schema optimization
+        - Architecture modernization
+        - Security enhancement
+        - Testing improvements
+        - Documentation in code
+        - Memory usage optimization
+        - Build/deployment process
+        - Other (please specify)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Scope of Changes
+      description: How extensive are the proposed changes?
+      options:
+        - Single function/method
+        - Single class/module
+        - Multiple related classes/modules
+        - Entire package/library
+        - Cross-cutting architectural change
+        - Infrastructure/tooling change
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-state
+    attributes:
+      label: Current State/Problem
+      description: Describe the current code state and why it needs refactoring
+      placeholder: |
+        Current issues:
+        - Code is difficult to understand/maintain because...
+        - Performance bottleneck in...
+        - Duplicated logic across...
+        - Tight coupling between...
+        - Missing abstractions for...
+        - Technical debt from...
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed Solution
+      description: Describe your refactoring approach in detail
+      placeholder: |
+        Proposed changes:
+        - Extract common functionality into...
+        - Implement [design pattern] to...
+        - Reorganize code structure by...
+        - Replace [current approach] with [new approach]...
+        - Optimize [specific area] by...
+    validations:
+      required: true
+
+  - type: textarea
+    id: code-examples
+    attributes:
+      label: Code Examples
+      description: Show before/after code examples or pseudocode
+      placeholder: |
+        **Before:**
+        ```javascript
+        // Current problematic code
+        function messyFunction(data) {
+          // Complex, hard to maintain code
+        }
+        ```
+
+        **After:**
+        ```javascript
+        // Proposed cleaner approach
+        class CleanImplementation {
+          processData(data) {
+            // Clear, maintainable code
+          }
+        }
+        ```
+    validations:
+      required: false
+
+  - type: textarea
+    id: benefits
+    attributes:
+      label: Expected Benefits
+      description: What improvements will this refactoring provide?
+      placeholder: |
+        Benefits:
+        - Improved code readability and maintainability
+        - Better performance (specific metrics if known)
+        - Reduced complexity/cyclomatic complexity
+        - Easier testing and debugging
+        - Better separation of concerns
+        - Reduced duplication
+        - Enhanced extensibility
+        - Better error handling
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How urgent is this refactoring?
+      options:
+        - Critical - Blocking other development or causing issues
+        - High - Significant impact on development velocity/quality
+        - Medium - Noticeable improvement to codebase
+        - Low - Nice-to-have improvement
+    validations:
+      required: true
+
+  - type: textarea
+    id: affected-components
+    attributes:
+      label: Affected Components
+      description: List the files, classes, or modules that would be changed
+      placeholder: |
+        Files/components to be modified:
+        - src/components/UserManager.js
+        - src/utils/dataProcessor.js
+        - tests/userManager.test.js
+        - API endpoints: /api/users/*
+        - Database migrations might be needed
+    validations:
+      required: true
+
+  - type: textarea
+    id: breaking-changes
+    attributes:
+      label: Breaking Changes
+      description: Will this refactoring introduce any breaking changes?
+      placeholder: |
+        Breaking changes:
+        - Public API method signatures will change
+        - Configuration format changes required
+        - Database schema changes needed
+        - No breaking changes expected
+        - Only internal refactoring, no external impact
+    validations:
+      required: true
+
+  - type: textarea
+    id: testing-strategy
+    attributes:
+      label: Testing Strategy
+      description: How will you ensure the refactoring doesn't break functionality?
+      placeholder: |
+        Testing approach:
+        - All existing tests should pass unchanged
+        - Add new tests for refactored components
+        - Integration tests to verify behavior unchanged
+        - Performance benchmarks before/after
+        - Manual testing of affected features
+    validations:
+      required: true
+
+  - type: textarea
+    id: migration-plan
+    attributes:
+      label: Migration/Implementation Plan
+      description: How should this refactoring be implemented safely?
+      placeholder: |
+        Implementation strategy:
+        1. Create feature branch with backward compatibility
+        2. Implement new structure alongside old code
+        3. Gradually migrate components in phases:
+           - Phase 1: Core utilities
+           - Phase 2: Business logic
+           - Phase 3: API layer
+        4. Remove deprecated code after migration
+        5. Update documentation and examples
+    validations:
+      required: false
+
+  - type: dropdown
+    id: performance-impact
+    attributes:
+      label: Performance Impact
+      description: Expected impact on performance
+      options:
+        - Significant improvement expected
+        - Minor improvement expected
+        - No significant impact
+        - Minor performance cost acceptable for code quality
+        - Need to benchmark to determine impact
+        - Unknown/needs investigation
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives-considered
+    attributes:
+      label: Alternative Approaches
+      description: What other approaches did you consider and why was this chosen?
+      placeholder: |
+        Alternatives considered:
+        1. [Alternative 1]: Pros/cons...
+        2. [Alternative 2]: Pros/cons...
+        3. Do nothing: Why this isn't sufficient...
+
+        Why chosen approach is best:
+        - [Reasons for selection]
+    validations:
+      required: false
+
+  - type: textarea
+    id: risks-mitigation
+    attributes:
+      label: Risks and Mitigation
+      description: What risks does this refactoring introduce and how will you mitigate them?
+      placeholder: |
+        Identified risks:
+        - Risk of introducing bugs during refactoring
+          Mitigation: Comprehensive test coverage and gradual rollout
+        - Risk of merge conflicts with ongoing development
+          Mitigation: Coordinate with team, work in smaller increments
+        - Risk of performance regression
+          Mitigation: Benchmark before/after, performance monitoring
+    validations:
+      required: false
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies and Blockers
+      description: What needs to happen before this refactoring can be started?
+      placeholder: |
+        Prerequisites:
+        - Complete current feature development in affected areas
+        - Coordinate with [team/person] working on related code
+        - Upgrade dependencies to support new patterns
+        - Get architectural review/approval
+        - No blockers identified
+    validations:
+      required: false
+
+  - type: input
+    id: estimated-effort
+    attributes:
+      label: Estimated Effort
+      description: Rough estimate of time/complexity for this refactoring
+      placeholder: "2-3 days, 1 week, 2 weeks, needs investigation, etc."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution
+      description: How would you like to contribute to this refactoring?
+      options:
+        - label: I'm willing to implement this refactoring
+        - label: I can help with code review and testing
+        - label: I can help with documentation updates
+        - label: I can provide benchmarking and performance testing
+        - label: I can help coordinate with affected teams
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other relevant information about this refactoring
+      placeholder: |
+        Additional context:
+        - Related to technical debt from [specific source]
+        - Inspired by [external resource/best practice]
+        - Part of larger architectural improvement initiative
+        - Customer/performance issues driving this need
+        - Team discussion outcomes
+    validations:
+      required: false
