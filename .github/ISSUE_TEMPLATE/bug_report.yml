@@ -1,46 +1,251 @@
-name: 🐞 Bug Report
-description: Report a bug to help us improve
+name: 🐛 Bug Report
+description: Report a bug or unexpected behavior
 title: "[Bug]: "
-labels: [ bug ]
-assignees: [ ]
+labels: ["bug", "needs-triage"]
+assignees:
+  - maintainer-username
 body:
-  - type: input
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! Please fill out this form as completely as possible to help us reproduce and fix the issue.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-flight checklist
+      description: Please ensure you've completed these steps before submitting
+      options:
+        - label: I have searched the existing issues to make sure this bug hasn't been reported yet
+          required: true
+        - label: I have checked the documentation and FAQ
+          required: true
+        - label: I have tried to reproduce this bug with the latest version
+          required: true
+        - label: I have provided all the required information below
+          required: true
+
+  - type: textarea
     id: summary
     attributes:
       label: Bug Summary
-      placeholder: "Short description of the bug"
+      description: A clear and concise description of what the bug is
+      placeholder: "Describe what happened in a few sentences..."
     validations:
       required: true
 
   - type: textarea
-    id: steps
-    attributes:
-      label: Steps to Reproduce
-      placeholder: "1. Go to...\n2. Click...\n3. See error"
-    validations:
-      required: true
-
-  - type: textarea
-    id: expected
+    id: expected-behavior
     attributes:
       label: Expected Behavior
-      placeholder: "What did you expect to happen?"
+      description: What did you expect to happen?
+      placeholder: "I expected [specific behavior or outcome]..."
     validations:
       required: true
 
   - type: textarea
-    id: actual
+    id: actual-behavior
     attributes:
       label: Actual Behavior
-      placeholder: "What actually happened?"
+      description: What actually happened instead?
+      placeholder: "Instead, [what actually occurred]..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: Detailed steps to reproduce the bug
+      placeholder: |
+        1. Go to '...'
+        2. Click on '....'
+        3. Scroll down to '....'
+        4. See error
+    validations:
+      required: true
+
+  - type: textarea
+    id: minimal-reproduction
+    attributes:
+      label: Minimal Reproduction Case
+      description: If possible, provide a minimal code example or link to a reproduction
+      placeholder: |
+        ```javascript
+        // Minimal code that demonstrates the issue
+        ```
+
+        Or provide a link to a CodeSandbox, JSFiddle, or repository that reproduces the issue.
+    validations:
+      required: false
+
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: What version of the software are you using?
+      placeholder: "v1.2.3 or commit hash"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment-type
+    attributes:
+      label: Environment
+      description: Where are you experiencing this bug?
+      options:
+        - Production
+        - Staging/Testing
+        - Development
+        - Local development
+    validations:
+      required: true
+
+  - type: dropdown
+    id: operating-system
+    attributes:
+      label: Operating System
+      description: What operating system are you using?
+      options:
+        - Windows
+        - macOS
+        - Linux (Ubuntu)
+        - Linux (Other)
+        - iOS
+        - Android
+        - Other (please specify)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser (if applicable)
+      description: Which browser are you using?
+      options:
+        - Not applicable
+        - Chrome
+        - Firefox
+        - Safari
+        - Edge
+        - Opera
+        - Mobile Safari
+        - Chrome Mobile
+        - Other (please specify)
+    validations:
+      required: false
+
+  - type: input
+    id: browser-version
+    attributes:
+      label: Browser Version
+      description: Browser version (if applicable)
+      placeholder: "Chrome 120.0.6099.109"
+    validations:
+      required: false
+
+  - type: textarea
+    id: system-info
+    attributes:
+      label: System Information
+      description: Additional system details (Node.js version, Python version, etc.)
+      placeholder: |
+        - Node.js version: 18.17.0
+        - npm version: 9.6.7
+        - Python version: 3.11.0
+        - Any other relevant system info
+    validations:
+      required: false
+
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: Frequency
+      description: How often does this bug occur?
+      options:
+        - Always (100%)
+        - Often (50-90%)
+        - Sometimes (10-50%)
+        - Rarely (<10%)
+        - Only once
     validations:
       required: true
 
   - type: dropdown
     id: severity
     attributes:
-      label: Severity
+      label: Impact/Severity
+      description: How severe is this bug?
       options:
-        - Low
-        - Medium
-        - High
+        - Critical - Prevents core functionality/causes data loss
+        - High - Significantly impacts usability
+        - Medium - Moderate impact on functionality
+        - Low - Minor issue or cosmetic problem
+    validations:
+      required: true
+
+  - type: textarea
+    id: error-logs
+    attributes:
+      label: Error Messages/Logs
+      description: Include any error messages, console logs, or stack traces
+      placeholder: |
+        ```
+        Paste error messages, console output, or stack traces here
+        ```
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots/Videos
+      description: Add screenshots, videos, or GIFs that help explain the issue
+      placeholder: "Drag and drop images here or paste links to screenshots/videos"
+    validations:
+      required: false
+
+  - type: textarea
+    id: workaround
+    attributes:
+      label: Workaround
+      description: Have you found any workaround for this issue?
+      placeholder: "If you've found a way to work around this bug, please describe it here..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: regression
+    attributes:
+      label: Regression Information
+      description: Did this work in a previous version? When did it start breaking?
+      placeholder: |
+        - Last working version: v1.1.0
+        - First broken version: v1.2.0
+        - This is a new feature that never worked
+        - I'm not sure when this started
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other context, related issues, or helpful information
+      placeholder: |
+        - Related issues: #123, #456
+        - This might be related to recent changes in...
+        - This affects users who...
+        - Business impact: ...
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution
+      description: Are you willing to help fix this bug?
+      options:
+        - label: I'm willing to submit a pull request to fix this bug
+        - label: I can help with testing the fix
+        - label: I can provide additional debugging information if needed
