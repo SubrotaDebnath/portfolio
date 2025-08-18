@@ -3,5 +3,5 @@ blank_issues_enabled: false
 templates:
   - name: Pull Request
     description: Submit a pull request for review
-    file: pull_request_template.yml
+    file: pull_request_template.md
 
