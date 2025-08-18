@@ -1,34 +1,20 @@
-name: 🚀 Feature Request
-description: Suggest a new feature or enhancement for this project
-title: "[Feature]: "
-labels: ["enhancement", "needs-triage"]
-assignees:
-  - maintainer-username
+name: Feature Request
+description: Suggest a new feature or enhancement
+title: "[FEATURE] "
+labels: ["enhancement"]
+assignees: []
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to suggest a new feature! Please fill out this form as completely as possible.
-
-  - type: checkboxes
-    id: checks
-    attributes:
-      label: Pre-flight checklist
-      description: Please ensure you've completed these steps before submitting
-      options:
-        - label: I have searched the existing issues to make sure this feature hasn't been requested yet
-          required: true
-        - label: I have checked the documentation to make sure this feature doesn't already exist
-          required: true
-        - label: I have considered if this feature aligns with the project's goals and scope
-          required: true
+        Thanks for taking the time to suggest a new feature! Please fill out the sections below.
 
   - type: textarea
     id: problem
     attributes:
-      label: Problem Statement
-      description: What problem does this feature solve? What pain point are you experiencing?
-      placeholder: "As a [user type], I'm frustrated when [situation] because [reason]..."
+      label: Problem Description
+      description: What problem does this feature solve? What's the current limitation?
+      placeholder: "I'm always frustrated when..."
     validations:
       required: true
 
@@ -36,106 +22,36 @@ body:
     id: solution
     attributes:
       label: Proposed Solution
-      description: Describe your ideal solution in detail
-      placeholder: "I would like to see [specific feature] that works by [detailed explanation]..."
+      description: Describe the feature you'd like to see implemented
+      placeholder: "I would like to see..."
     validations:
       required: true
 
   - type: textarea
     id: alternatives
     attributes:
-      label: Alternative Solutions
-      description: Have you considered any alternative approaches or workarounds?
-      placeholder: "I've also considered [alternative 1], [alternative 2]..."
+      label: Alternatives Considered
+      description: Have you considered any alternative solutions or workarounds?
+      placeholder: "Alternative approaches could be..."
     validations:
       required: false
-
-  - type: dropdown
-    id: user-type
-    attributes:
-      label: User Type
-      description: What type of user would primarily benefit from this feature?
-      options:
-        - End user
-        - Developer/Integrator
-        - Administrator
-        - Other (please specify in additional context)
-    validations:
-      required: true
-
-  - type: dropdown
-    id: priority
-    attributes:
-      label: Priority/Impact
-      description: How important is this feature to you and your use case?
-      options:
-        - Critical - Blocking core functionality
-        - High - Significantly improves workflow
-        - Medium - Nice to have improvement
-        - Low - Minor enhancement
-    validations:
-      required: true
-
-  - type: textarea
-    id: use-cases
-    attributes:
-      label: Use Cases
-      description: Provide specific examples of how this feature would be used
-      placeholder: |
-        1. When [scenario], users could [action with new feature]
-        2. In [situation], this would help by [specific benefit]
-        3. For [user group], this enables [new capability]
-    validations:
-      required: true
-
-  - type: textarea
-    id: acceptance-criteria
-    attributes:
-      label: Acceptance Criteria
-      description: What specific requirements must be met for this feature to be considered complete?
-      placeholder: |
-        - [ ] Feature does X when Y happens
-        - [ ] UI shows Z in response to user action
-        - [ ] API returns expected response format
-        - [ ] Feature works on mobile/desktop
-        - [ ] Performance impact is minimal
-    validations:
-      required: false
-
-  - type: textarea
-    id: mockups
-    attributes:
-      label: Mockups/Examples
-      description: Include mockups, screenshots, links to similar features, or code examples
-      placeholder: "Attach images, provide links, or describe visual examples..."
-    validations:
-      required: false
-
-  - type: textarea
-    id: technical-considerations
-    attributes:
-      label: Technical Considerations
-      description: Any technical constraints, dependencies, or implementation thoughts?
-      placeholder: "This might require changes to [component], could integrate with [service], etc."
-    validations:
-      required: false
-
-  - type: checkboxes
-    id: implementation
-    attributes:
-      label: Implementation
-      description: Are you willing to help implement this feature?
-      options:
-        - label: I'm willing to submit a pull request for this feature
-        - label: I can help with testing and feedback
-        - label: I can provide additional design/UX input
-        - label: I can help with documentation
 
   - type: textarea
     id: additional-context
     attributes:
       label: Additional Context
-      description: Anything else that would help understand this feature request?
-      placeholder: "Related issues, external references, business context..."
+      description: Add any other context, screenshots, or examples about the feature request
+      placeholder: "Additional details..."
     validations:
       required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      description: Please confirm the following
+      options:
+        - label: I have searched existing issues to ensure this feature hasn't been requested before
+          required: true
+        - label: I believe this feature would benefit other users, not just my specific use case
+          required: true
