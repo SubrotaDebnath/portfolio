@@ -239,13 +239,3 @@ body:
         - Business impact: ...
     validations:
       required: false
-
-  - type: checkboxes
-    id: contribution
-    attributes:
-      label: Contribution
-      description: Are you willing to help fix this bug?
-      options:
-        - label: I'm willing to submit a pull request to fix this bug
-        - label: I can help with testing the fix
-        - label: I can provide additional debugging information if needed
