@@ -8,7 +8,7 @@ export const useTypingEffect = (texts: string[], speed: number = 100): string =>
   const pauseTimeoutRef = useRef<number | null>(null);
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
+    const timeout = window.setTimeout(() => {
       const currentText = texts[currentIndex];
 
       if (isDeleting) {
@@ -24,15 +24,15 @@ export const useTypingEffect = (texts: string[], speed: number = 100): string =>
         setCurrentCharIndex(prev => prev + 1);
 
         if (currentCharIndex === currentText.length) {
-          pauseTimeoutRef.current = setTimeout(() => setIsDeleting(true), 2000);
+          pauseTimeoutRef.current = window.setTimeout(() => setIsDeleting(true), 2000);
         }
       }
     }, isDeleting ? speed / 2 : speed);
 
     return () => {
-      clearTimeout(timeout);
-      if (pauseTimeoutRef.current) {
-        clearTimeout(pauseTimeoutRef.current);
+      window.clearTimeout(timeout);
+      if (pauseTimeoutRef.current !== null) {
+        window.clearTimeout(pauseTimeoutRef.current);
       }
     };
   }, [currentCharIndex, currentIndex, isDeleting, texts, speed]);
