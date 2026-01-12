@@ -2,7 +2,7 @@ import React from 'react';
 import type {NavigationProps} from '../../domain/types';
 
 const Navigation: React.FC<NavigationProps> = ({activeSection, onSectionChange}) => {
-  const sections: readonly string[] = ['about', 'projects', 'blog', 'contact'];
+  const sections: readonly string[] = ['about', 'projects', 'contact'];
 
   return (
     <nav className="nav" aria-label="Main navigation">

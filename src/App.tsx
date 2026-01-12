@@ -12,7 +12,7 @@ import Navigation from './components/shared/Navigation';
 import Hero from './components/sections/Hero';
 import About from './components/sections/About';
 import Projects from './components/sections/Projects';
-import Blog from './components/sections/Blog';
+// import Blog from './components/sections/Blog';
 import Contact from './components/sections/Contact';
 import Footer from './components/sections/Footer';
 import Notification from './components/ui/Notification';
@@ -24,7 +24,7 @@ import type {ContactFormData, NotificationData} from "./domain/types.ts";
 
 // Initialize data and services outside the component to avoid re-creation
 const dataService: IDataService = new DataService();
-const blogPosts = dataService.getBlogPosts();
+// const blogPosts = dataService.getBlogPosts();
 const projects = dataService.getProjects();
 const skills = dataService.getSkills();
 const socialLinks = dataService.getSocialLinks();
@@ -57,7 +57,7 @@ const App: React.FC = () => {
       <Hero onNavigate={scrollToSection}/>
       <About skills={skills}/>
       <Projects projects={projects}/>
-      <Blog posts={blogPosts}/>
+      {/* <Blog posts={blogPosts}/> */}
       <Contact onSubmitMessage={handleSubmitMessage}/>
       <Footer socialLinks={socialLinks}/>
 

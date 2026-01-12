@@ -16,16 +16,11 @@ const About: React.FC<AboutProps> = ({skills}) => {
         >
           <div className="about-image" role="img" aria-label="Developer emoji">👨‍💻</div>
           <div className="about-text">
-            <p>I'm a passionate full-stack developer with 5+ years of experience building scalable web applications and
-              distributed systems. My journey started with a curiosity about how things work under the hood, leading me
-              to fall in love with clean, efficient code.</p>
+            <p>I'm a Senior Mobile Software Engineer with 6+ years of experience delivering scalable Android and cross-platform mobile applications in production environments. My expertise spans Flutter (4+ years) and native Android development, with proven ownership of end-to-end mobile solutions.</p>
 
-            <p>When I'm not coding, you'll find me contributing to open source projects, writing technical blog posts,
-              or exploring the latest in cloud architecture. I believe in continuous learning and sharing knowledge with
-              the developer community.</p>
+            <p>I specialize in architecture design, API and IoT integrations, performance optimization, and release management. My work includes building reliable, user-centric applications for enterprise and high-growth products, including YourCampus which serves 70k+ users with 280+ app store ratings.</p>
 
-            <p>Currently focused on modern web technologies, cloud-native development, and building tools that make
-              developers' lives easier.</p>
+            <p>Currently focused on Flutter and Android development, IoT-enabled mobile platforms, and implementing Clean Architecture principles to build maintainable and scalable applications.</p>
 
             <div className="skills" role="list" aria-label="Technical skills">
               {skills.map((skill, index) => (

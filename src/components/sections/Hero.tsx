@@ -6,11 +6,11 @@ import Terminal from '../../components/shared/Terminal';
 
 const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
   const typingTexts: string[] = [
-    'Mobile App Developer & Open Source Enthusiast',
-    'Building Modern Applications',
-    'Passionate About Clean Code',
-    'Always Learning New Technologies',
-    'Problem Solver & Coffee Enthusiast'
+    'Senior Mobile Software Engineer',
+    'Flutter & Android Development Expert',
+    '6+ Years Building Scalable Apps',
+    'IoT & Cross-Platform Specialist',
+    'Clean Architecture Advocate'
   ];
 
   const displayText = useTypingEffect(typingTexts);
@@ -21,7 +21,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
         <div className="hero-content">
           <h1>Subrota Debnath</h1>
           <p className="typing-effect" aria-live="polite" aria-atomic="true">{displayText}</p>
-          <p>Building digital experiences with clean code and creative solutions</p>
+          <p>Delivering scalable mobile applications with proven expertise in Flutter, Android, and IoT integrations</p>
 
           <Terminal />
 

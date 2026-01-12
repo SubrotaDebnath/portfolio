@@ -69,39 +69,20 @@ export class DataService implements IDataService {
   getProjects(): Project[] {
     const projectsData: ProjectData[] = [
       {
-        title: "DevFlow - Developer Workflow Manager",
-        description: "A comprehensive project management tool designed specifically for development teams, featuring Git integration, automated deployments, and real-time collaboration.",
-        technologies: ["React", "Node.js", "PostgreSQL", "Docker", "AWS"],
+        title: "YourCampus — IoT-Enabled Smart Campus Platform",
+        description: "Lead Mobile App Developer for a cross-platform Flutter app serving 70k+ users with 280+ ratings. Built smart services including laundry booking & machine control, contactless vending, e-commerce, and secure lockers. Implemented real-time IoT device communication and scalable mobile solutions supporting real-world operations.",
+        technologies: ["Flutter", "Dart", "BLoC", "Clean Architecture", "MQTT", "REST APIs", "Firebase ML Kit", "AWS IoT", "CI/CD"],
         links: [
-          {label: "Live Demo", url: "#"},
-          {label: "GitHub", url: "#"}
+          {label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.getaid.yourcampus"},
+          {label: "App Store", url: "https://apps.apple.com/us/app/yourcampus/id6449520997"}
         ]
       },
       {
-        title: "CloudSync API",
-        description: "High-performance RESTful API for file synchronization across multiple cloud providers with end-to-end encryption and conflict resolution.",
-        technologies: ["Python", "FastAPI", "Redis", "Kubernetes", "MongoDB"],
+        title: "School Supervision Tools (SST) — BRAC Education Program",
+        description: "Developed a role-based school management system for BRAC's Education Program with multi-role support for Teachers, Managers, and Organizers. Features include messaging, attendance tracking, digital assessments, grading, and analytics. Reduced administrative workload by ~30% with improved UX and performance.",
+        technologies: ["Android", "Java", "MVVM", "MVP", "SQLite", "WorkManager", "CameraX", "Push Notifications", "Socket Communication"],
         links: [
-          {label: "Documentation", url: "#"},
-          {label: "GitHub", url: "#"}
-        ]
-      },
-      {
-        title: "Terminal Theme Engine",
-        description: "Open-source terminal customization tool with 50+ themes including Gruvbox variants. Built with Rust for maximum performance and cross-platform compatibility.",
-        technologies: ["Rust", "CLI", "Cross-platform", "Open Source"],
-        links: [
-          {label: "Install", url: "#"},
-          {label: "GitHub", url: "#"}
-        ]
-      },
-      {
-        title: "Real-time Analytics Dashboard",
-        description: "Interactive dashboard for monitoring application metrics with customizable widgets, real-time updates, and intelligent alerting system.",
-        technologies: ["Vue.js", "TypeScript", "WebSockets", "D3.js", "InfluxDB"],
-        links: [
-          {label: "Live Demo", url: "#"},
-          {label: "GitHub", url: "#"}
+          {label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.onuitive.sst"}
         ]
       }
     ];
@@ -111,8 +92,10 @@ export class DataService implements IDataService {
 
   getSkills(): string[] {
     return [
-      'Flutter', 'Dart', 'Jetpack Compose', 'Kotlin', 'Java', 'SwiftUI', 'Swift', 'MVVM', 'MVC', 'MVP',
-      'Clean Architecture', 'BLoC', 'CI/CD'
+      'Flutter', 'Dart', 'Android SDK', 'Java', 'Kotlin', 'Swift', 'Jetpack Components',
+      'BLoC', 'Provider', 'Clean Architecture', 'MVVM', 'MVP', 'Dependency Injection',
+      'REST APIs', 'MQTT', 'Socket Communication', 'Firebase', 'AWS IoT', 'SQLite',
+      'Unit Testing', 'Integration Testing', 'Git', 'CI/CD', 'Agile/Scrum'
     ];
   }
 
@@ -120,7 +103,6 @@ export class DataService implements IDataService {
     return [
       {name: 'GitHub', url: 'https://github.com/SubrotaDebnath'},
       {name: 'LinkedIn', url: 'https://www.linkedin.com/in/subrotadebnath/'},
-      // {name: 'Twitter', url: '#'},
       {name: 'Email', url: 'mailto:developer.subrota@gmail.com'}
     ];
   }

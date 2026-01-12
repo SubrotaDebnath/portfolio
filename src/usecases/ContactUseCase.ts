@@ -1,7 +1,13 @@
+import emailjs from '@emailjs/browser';
 import type { IContactUseCase } from "../domain/interfaces/IContactUseCase";
 import type { INotificationService } from "../domain/interfaces/INotificationService";
 import { ContactMessage } from "../domain/entities/ContactMessage";
 import type { ContactFormData, SubmissionResult } from "../domain/types";
+
+// EmailJS Configuration from environment variables
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 export class ContactUseCase implements IContactUseCase {
   private readonly notificationService: INotificationService;
@@ -24,8 +30,8 @@ export class ContactUseCase implements IContactUseCase {
         return { success: false, errors: validation.errors };
       }
 
-      // Simulate API call
-      await this.simulateApiCall();
+      // Send email using EmailJS
+      await this.sendEmail(messageData);
 
       this.notificationService.showSuccess(
         "Thanks for your message! I'll get back to you soon."
@@ -41,7 +47,18 @@ export class ContactUseCase implements IContactUseCase {
     }
   }
 
-  private async simulateApiCall(): Promise<void> {
-    return new Promise((resolve) => setTimeout(resolve, 1000));
+  private async sendEmail(formData: ContactFormData): Promise<void> {
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      message: formData.message,
+    };
+
+    await emailjs.send(
+      EMAILJS_SERVICE_ID,
+      EMAILJS_TEMPLATE_ID,
+      templateParams,
+      EMAILJS_PUBLIC_KEY
+    );
   }
 }
