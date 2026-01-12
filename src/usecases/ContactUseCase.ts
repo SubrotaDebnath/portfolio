@@ -18,6 +18,21 @@ export class ContactUseCase implements IContactUseCase {
 
   async submitMessage(messageData: ContactFormData): Promise<SubmissionResult> {
     try {
+      // Validate EmailJS configuration
+      if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+        const missingVars = [];
+        if (!EMAILJS_SERVICE_ID) missingVars.push('SERVICE_ID');
+        if (!EMAILJS_TEMPLATE_ID) missingVars.push('TEMPLATE_ID');
+        if (!EMAILJS_PUBLIC_KEY) missingVars.push('PUBLIC_KEY');
+
+        const errorMsg = `EmailJS configuration missing: ${missingVars.join(', ')}`;
+        console.error(errorMsg);
+        this.notificationService.showError(
+          "Email service is not configured. Please contact the site administrator."
+        );
+        return { success: false, error: errorMsg };
+      }
+
       const message = new ContactMessage(
         messageData.name,
         messageData.email,
@@ -40,8 +55,9 @@ export class ContactUseCase implements IContactUseCase {
     } catch (error) {
       const errorMessage =
         error instanceof Error ? error.message : "Unknown error";
+      console.error('ContactUseCase error:', error);
       this.notificationService.showError(
-        "Failed to send message. Please try again."
+        `Failed to send message: ${errorMessage}`
       );
       return { success: false, error: errorMessage };
     }
