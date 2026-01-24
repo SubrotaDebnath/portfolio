@@ -69,20 +69,29 @@ export class DataService implements IDataService {
   getProjects(): Project[] {
     const projectsData: ProjectData[] = [
       {
-        title: "YourCampus — IoT-Enabled Smart Campus Platform",
-        description: "Lead Mobile App Developer for a cross-platform Flutter app serving 70k+ users with 280+ ratings. Built smart services including laundry booking & machine control, contactless vending, e-commerce, and secure lockers. Implemented real-time IoT device communication and scalable mobile solutions supporting real-world operations.",
-        technologies: ["Flutter", "Dart", "BLoC", "Clean Architecture", "MQTT", "REST APIs", "Firebase ML Kit", "AWS IoT", "CI/CD"],
+        title: "YOUR CAMPUS — Campus Services Mobile Application",
+        description: "Developed and published a cross-platform campus services mobile application used by thousands of students across multiple universities. Built 5+ integrated service modules including laundry booking, smart lockers, vending machines, e-commerce, loyalty rewards, and environmental impact tracking. Architected a scalable Clean Architecture using BLoC state management. Implemented real-time IoT communication with vending machines and lockers using MQTT and AWS IoT Core (SSL/TLS), alongside Firebase services for authentication, chat, push notifications (FCM/APNs), and analytics. Designed an offline-first data layer with local caching and secure storage, integrated multi-gateway payments with wallet and credit management.",
+        technologies: ["Flutter", "Dart", "BLoC", "Firebase Suite", "MQTT", "AWS IoT Core", "REST APIs", "SQLite", "GetIt (DI)", "Secure Storage"],
         links: [
-          {label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.getaid.yourcampus"},
-          {label: "App Store", url: "https://apps.apple.com/us/app/yourcampus/id6449520997"}
+          {label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.mnt.your_campus"},
+          {label: "App Store", url: "https://apps.apple.com/app/id6464159149"}
         ]
       },
       {
-        title: "School Supervision Tools (SST) — BRAC Education Program",
-        description: "Developed a role-based school management system for BRAC's Education Program with multi-role support for Teachers, Managers, and Organizers. Features include messaging, attendance tracking, digital assessments, grading, and analytics. Reduced administrative workload by ~30% with improved UX and performance.",
-        technologies: ["Android", "Java", "MVVM", "MVP", "SQLite", "WorkManager", "CameraX", "Push Notifications", "Socket Communication"],
+        title: "Fitmate — Cross-Platform Fitness Mobile Application",
+        description: "Developed a cross-platform Flutter fitness application enabling gym discovery, class booking, subscriptions, and secure payments. Implemented secure authentication (OTP, Google, Facebook, Apple) with Firebase Auth and App Check, plus offline support, QR check-ins, deep linking, and secure local storage. Architected the app using modular clean architecture, Provider-based state management, and GetIt dependency injection. Integrated Stripe payments with subscriptions, free trials, Apple Pay, wallet/points system, and OneSignal push notifications. Optimized performance by reducing login time from ~14s to <2s via parallel API calls, caching, and optimized navigation; implemented location-based gym discovery with GPS and interactive maps (Mapbox).",
+        technologies: ["Flutter", "Dart", "Firebase", "Stripe SDK", "Mapbox", "OneSignal", "Provider", "SQLite", "GetIt", "REST APIs"],
         links: [
-          {label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.onuitive.sst"}
+          {label: "Play Store", url: "https://play.google.com/store/apps/details?id=au.fitmate.app"},
+          {label: "App Store", url: "https://apps.apple.com/app/id6474177403"}
+        ]
+      },
+      {
+        title: "SST — School Supervision Tool (BRAC Education Program)",
+        description: "Developed a native Android application for BRAC Education to digitize school supervision, attendance tracking, visit logs, environmental assessments, and performance reporting. Implemented a fragment-based modular architecture with a Material Design–compliant user interface, enabling real-time data visualization and seamless navigation across core modules including Attendance, Visits, Environment, and Assessments. Built a secure authentication flow with role-based profile management, optimized navigation using FragmentManager, and back stack handling for smooth performance.",
+        technologies: ["Java", "Android SDK", "AndroidX", "Material Design", "Fragments", "ViewPager", "ConstraintLayout", "Gradle", "JUnit", "Espresso"],
+        links: [
+          {label: "Internal Use", url: ""}
         ]
       }
     ];
@@ -92,10 +101,30 @@ export class DataService implements IDataService {
 
   getSkills(): string[] {
     return [
-      'Flutter', 'Dart', 'Android SDK', 'Java', 'Kotlin', 'Swift', 'Jetpack Components',
-      'BLoC', 'Provider', 'Clean Architecture', 'MVVM', 'MVP', 'Dependency Injection',
-      'REST APIs', 'MQTT', 'Socket Communication', 'Firebase', 'AWS IoT', 'SQLite',
-      'Unit Testing', 'Integration Testing', 'Git', 'CI/CD', 'Agile/Scrum'
+      // Languages
+      'Dart', 'Java', 'Kotlin', 'Swift', 'Go', 'C/C++',
+      // Mobile Frameworks
+      'Flutter', 'Android SDK', 'Jetpack Components',
+      // State Management
+      'BLoC', 'Provider',
+      // Architecture & Patterns
+      'Clean Architecture', 'MVVM', 'MVP', 'Dependency Injection',
+      // Backend & APIs
+      'REST APIs', 'MQTT', 'Socket Communication', 'Firebase Services',
+      // Databases & Storage
+      'SQLite', 'Local Caching', 'Offline-First Design',
+      // Cloud & IoT
+      'AWS IoT', 'Firebase', 'Real-Time IoT Communication',
+      // Testing & Quality
+      'Unit Testing', 'Integration Testing', 'Performance Optimization',
+      // Monitoring & Analytics
+      'Firebase Analytics', 'Crash Reporting',
+      // Mobile Security
+      'Secure API Communication', 'Authentication Flows',
+      // DevOps & Tools
+      'Git', 'CI/CD', 'Play Store Deployment', 'App Store Deployment',
+      // Collaboration
+      'Agile/Scrum', 'Cross-Functional Teams', 'Remote Collaboration'
     ];
   }
 
