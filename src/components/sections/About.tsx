@@ -14,7 +14,13 @@ const About: React.FC<AboutProps> = ({skills}) => {
           ref={ref}
           className={`about-content ${isVisible ? 'fade-in' : ''}`}
         >
-          <div className="about-image" role="img" aria-label="Developer emoji">👨‍💻</div>
+          <div className="about-image">
+            <img
+              src="/images/about-portrait.jpg"
+              alt="Portrait of Subrota Debnath, Senior Mobile Software Engineer"
+              loading="lazy"
+            />
+          </div>
           <div className="about-text">
             <p>I'm a Senior Mobile Software Engineer with 6+ years of experience delivering scalable Android and cross-platform mobile applications in production environments. My expertise spans Flutter (4+ years) and native Android development, with proven ownership of end-to-end mobile solutions.</p>
 
@@ -26,6 +32,17 @@ const About: React.FC<AboutProps> = ({skills}) => {
               {skills.map((skill, index) => (
                 <SkillTag key={index} skill={skill}/>
               ))}
+            </div>
+
+            <div className="about-stats" role="list" aria-label="Career highlights">
+              <div className="stat-card" role="listitem">
+                <div className="stat-value">6+</div>
+                <div className="stat-label">Years Experience</div>
+              </div>
+              <div className="stat-card" role="listitem">
+                <div className="stat-value">70k+</div>
+                <div className="stat-label">Users Reached</div>
+              </div>
             </div>
           </div>
         </div>

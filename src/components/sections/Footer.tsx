@@ -5,6 +5,7 @@ const Footer: React.FC<FooterProps> = ({socialLinks}) => {
   return (
     <footer role="contentinfo">
       <div className="container">
+        <div className="logo-mark" aria-hidden="true">{'{subrota}'}</div>
         <div className="social-links" aria-label="Social media links">
           {socialLinks.map((link, index) => (
             <a

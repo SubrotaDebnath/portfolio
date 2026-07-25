@@ -19,9 +19,13 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
     <section className="hero" aria-label="Hero section">
       <div className="container">
         <div className="hero-content">
+          <div className="availability-badge">
+            <span className="dot" aria-hidden="true"></span>
+            Available for New Projects
+          </div>
           <h1>Subrota Debnath</h1>
           <p className="typing-effect" aria-live="polite" aria-atomic="true">{displayText}</p>
-          <p>Delivering scalable mobile applications with proven expertise in Flutter, Android, and IoT integrations</p>
+          <p className="subtitle">Delivering scalable mobile applications with proven expertise in Flutter, Android, and IoT integrations.</p>
 
           <Terminal />
 

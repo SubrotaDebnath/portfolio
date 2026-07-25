@@ -25,6 +25,19 @@ const Navigation: React.FC<NavigationProps> = ({activeSection, onSectionChange})
               </a>
             </li>
           ))}
+          <li>
+            <a
+              href="#contact"
+              className="nav-resume"
+              onClick={(e) => {
+                e.preventDefault();
+                onSectionChange('contact');
+              }}
+              aria-label="Get in touch"
+            >
+              Hire Me
+            </a>
+          </li>
         </ul>
       </div>
     </nav>

@@ -7,6 +7,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
     <section id="projects" className="projects" aria-labelledby="projects-heading">
       <div className="container">
         <h2 id="projects-heading" className="section-title">Featured Projects</h2>
+        <p>Selected work demonstrating architectural depth, performance optimization, and cross-platform mobile engineering.</p>
         <div className="projects-grid" role="list" aria-label="Featured projects list">
           {projects.map((project, index) => (
             <ProjectCard key={index} project={project} index={index} />
