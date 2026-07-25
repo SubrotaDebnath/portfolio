@@ -22,9 +22,9 @@ const About: React.FC<AboutProps> = ({skills}) => {
             />
           </div>
           <div className="about-text">
-            <p>I'm a Senior Mobile Software Engineer with 6+ years of experience delivering scalable Android and cross-platform mobile applications in production environments. My expertise spans Flutter (4+ years) and native Android development, with proven ownership of end-to-end mobile solutions.</p>
+            <p>I'm a Senior Mobile Software Engineer with 7+ years of experience delivering scalable Android and cross-platform mobile applications in production environments. My expertise spans Flutter (5+ years) and native Android development, with proven ownership of end-to-end mobile solutions.</p>
 
-            <p>I specialize in architecture design, API and IoT integrations, performance optimization, and release management. My work includes building reliable, user-centric applications for enterprise and high-growth products, including YourCampus which serves 70k+ users with 280+ app store ratings.</p>
+            <p>I specialize in architecture design, API and IoT integrations, performance optimization, and release management. My work includes building reliable, user-centric applications for enterprise and high-growth products, including YourCampus which serves 130k+ users with 400+ app store ratings.</p>
 
             <p>Currently focused on Flutter and Android development, IoT-enabled mobile platforms, and implementing Clean Architecture principles to build maintainable and scalable applications.</p>
 
