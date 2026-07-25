@@ -36,11 +36,11 @@ const About: React.FC<AboutProps> = ({skills}) => {
 
             <div className="about-stats" role="list" aria-label="Career highlights">
               <div className="stat-card" role="listitem">
-                <div className="stat-value">6+</div>
+                <div className="stat-value">7+</div>
                 <div className="stat-label">Years Experience</div>
               </div>
               <div className="stat-card" role="listitem">
-                <div className="stat-value">70k+</div>
+                <div className="stat-value">200k+</div>
                 <div className="stat-label">Users Reached</div>
               </div>
             </div>
