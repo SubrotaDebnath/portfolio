@@ -7,7 +7,10 @@ const Navigation: React.FC<NavigationProps> = ({activeSection, onSectionChange})
   return (
     <nav className="nav" aria-label="Main navigation">
       <div className="container">
-        <a href="#" className="logo" aria-label="Home">{'{subrota}'}</a>
+        <a href="#" className="logo" aria-label="Home">
+          <img src="/images/about-portrait.jpg" alt="" className="logo-avatar" />
+          {'{subrota}'}
+        </a>
         <ul className="nav-links" role="list">
           {sections.map((section) => (
             <li key={section}>
